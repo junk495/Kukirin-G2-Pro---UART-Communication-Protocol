@@ -5,7 +5,8 @@ This repository documents the reverse-engineered UART communication protocol bet
 
 This documentation is intended for educational purposes and for developers interested in understanding or customizing the scooter's behavior.
 
-**Note**: This is an ongoing project, and the findings presented here have not yet been tested with an actual scooter. The information reflects the current state of analysis.
+**Note**: This is an ongoing project, and the findings presented here have been measured but not yet been tested with an actual scooter. 
+The information reflects the current state of analysis.
 
 ## 1. Physical Interface
 
