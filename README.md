@@ -2,7 +2,7 @@
 Reverse Engineering Documentation (V8)
 
 ## Introduction
-This repository documents the reverse-engineered UART communication protocol between the display (master) and the motor controller (slave) of the Kukirin G2 Pro e-scooter. All information was gathered by analyzing the data stream and validated through various tests.
+This repository documents the reverse-engineered UART communication protocol between the display (master) and the motor controller FM-G2-PRO-XS (slave) of the Kukirin G2 Pro e-scooter. All information was gathered by analyzing the data stream and validated through various tests.
 
 This documentation is intended for educational purposes and for developers interested in understanding or customizing the scooter's behavior.
 
