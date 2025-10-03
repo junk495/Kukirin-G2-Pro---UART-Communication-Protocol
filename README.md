@@ -151,7 +151,7 @@ Where:
 
 ## 7. Example Code: ESP32 Arduino Implementation
 
-Below is an Arduino framework example for the ESP32 to control the display/controller via UART.
+Below is an (untested) Arduino framework example for the ESP32 to control the display/controller via UART.
 
 ```cpp
 #include <Arduino.h>
