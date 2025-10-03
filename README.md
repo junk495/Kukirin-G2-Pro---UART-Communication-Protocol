@@ -1,7 +1,8 @@
-# Kukirin G2 Pro UART Communication Protocol - Reverse Engineering Documentation (V8)
+# Kukirin G2 Pro UART Communication Protocol
+Reverse Engineering Documentation (V8)
 
 ## Introduction
-This repository documents the reverse-engineered UART communication protocol between the display (master) and the motor controller (slave) of the Kukirin G2 Pro e-scooter. All information was gathered by analyzing the data stream and validated through various tests.
+This repository documents the reverse-engineered UART communication protocol between the display (master) and the motor controller FM-G2-PRO-XS (slave) of the Kukirin G2 Pro e-scooter. All information was gathered by analyzing the data stream and validated through various tests.
 
 This documentation is intended for educational purposes and for developers interested in understanding or customizing the scooter's behavior.
 
@@ -30,7 +31,7 @@ The information reflects the current state of analysis.
 
 ## 3. Packet Format
 
-### 3.1 TX Packets (Display → Controller) - FULLY DECODED
+### 3.1 TX Packets (Display → Controller)
 The analysis has revealed the function of all basic control commands and the checksum.
 
 **Packet Length**: 20 Bytes
@@ -48,8 +49,7 @@ The analysis has revealed the function of all basic control commands and the che
 | 0x10   | 2      | Throttle Setpoint      | 0x0000-0x03E8         | Throttle position (Little-Endian). Maximum value is scaled by the drive mode.          |
 | 0x12   | 2      | Checksum               | varies                | CRC-16/MODBUS of the first 18 bytes (Little-Endian). See Section 4.2.                  |
 
-### 3.2 RX Packets (Controller → Display) - FULLY DECODED
-All fields, including the checksum, have been identified.
+### 3.2 RX Packets (Controller → Display)
 
 **Packet Length**: 16 Bytes
 
