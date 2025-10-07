@@ -18,7 +18,7 @@ This documentation is intended for educational purposes and for developers inter
 - **Connection**: Display (Master) ↔ Motor Controller (Slave)
   - 6 pin JST SM Connector @Motor Controller
     - Red = Bat+
-    - Blue = Bat switched
+    - Blue = Bat+ switched
     - Black = GND
     - Green = TX
     - Yellow = RX
