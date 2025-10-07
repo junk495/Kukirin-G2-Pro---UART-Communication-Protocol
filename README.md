@@ -16,6 +16,12 @@ This documentation is intended for educational purposes and for developers inter
 - **Data Format**: 8N1 (8 data bits, no parity, 1 stop bit)
 - **Voltage**: 5V TTL
 - **Connection**: Display (Master) ↔ Motor Controller (Slave)
+  - 6 pin JST SM Connector @Motor Controller
+    - Red = Bat+
+    - Blue = Bat switched
+    - Black = GND
+    - Green = TX
+    - Yellow = RX
 - **Wheel Diameter**: 9 inches (22.86 cm, circumference ~71.81 cm)
 - **Pole Count**: 30 (likely 15 pole pairs, typical for BLDC motor)
 - **Speed Unit**: km/h (configurable in the display menu, switchable to mph, which may affect speed calculations)
