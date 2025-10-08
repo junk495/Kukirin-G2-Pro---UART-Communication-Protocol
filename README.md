@@ -109,7 +109,7 @@ The start procedure is a classic handshake to ensure the controller is operation
 1. **Button Press**: The user presses the power button. The display is powered on and immediately starts sending standard TX packets to the controller. The display backlight remains off initially.
 2. **Controller Response**: The motor controller receives the TX packets, initializes itself, and begins sending RX packets.
 3. **Handshake Signal**: As confirmation of a successful start, the controller sends at least one special "Boot-Acknowledged" packet. This packet differs from normal packets by having the status flag at Offset 0x03 set to 0x80.
-4. **Display Activation**: The display waits for the reception of a valid RX packet with this status flag. Once received, the handshake is complete, and the display fully activates its backlight and user interface.
+4. **Display Activation**: The display waits for the reception of a valid RX packet with this status flag. Once received, the handshake is complete, and the display fully activates its backlight and user interface. If the handshake is not complete the display also activates but shows error 006.
 5. **Normal Operation**: Immediately after sending the handshake packet, the controller switches to normal operation mode and sends only RX packets with a status flag of 0x00.
 
 ### 5.2 Stop Procedure (Timeout)
