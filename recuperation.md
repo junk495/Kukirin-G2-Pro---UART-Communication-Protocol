@@ -22,8 +22,10 @@ This document details newly discovered protocol fields related to regenerative b
 The recuperation strength setting (configurable via display menu, 6 levels: 0-5) is transmitted in the TX packet at **Offset 0x0A-0x0B** (previously documented as "Parameter 4 - Unknown").
 
 ### 2.2 Encoding Formula
+```
 Byte[0x0A] = 0x03 + (Recuperation_Level * 0x10)
 Byte[0x0B] = 0x00 (always)
+```
 ### 2.3 Complete Value Table
 
 | Recuperation Level | Byte 0x0A | Byte 0x0B | Decimal | Description |
@@ -127,7 +129,9 @@ The Speed Raw value at **RX Offset 0x08-0x09** (Big-Endian) was validated using 
 | 100% + Brake (stopped) | `0D AC` | 3500 | 0.7 km/h | Wheel stopped |
 
 ### 4.4 Speed Calculation Formula
+```
 v [km/h] ≈ 2550 / Speed_Raw_Decimal
+```
 Where:
 - `Speed_Raw_Decimal` = (Byte[0x08] << 8) | Byte[0x09] (Big-Endian)
 - Constant **2550** is empirically derived (validated for Level 2, Limited profile)
@@ -152,7 +156,9 @@ Where:
 The **Calculated Status Byte (RX Offset 0x0C)** shows an anomaly during braking that contradicts the documented validation rule.
 
 **Original Documentation (README_V12.md) states:**
+```
 Byte[0x0C] == 0x6C + Byte[0x03]
+```
 Where:
 - Normal: Status Flag (0x03) = 0x00 → Calculated Status = 0x6C
 - Handshake: Status Flag (0x03) = 0x80 → Calculated Status = 0xEC
@@ -290,3 +296,4 @@ This documentation is licensed under the MIT License. See the main repository LI
 ---
 
 **Contributors:** Protocol reverse engineering and validation by the Kukirin G2 Pro community.
+
