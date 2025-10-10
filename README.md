@@ -1,4 +1,6 @@
-# Kükirin G2 Pro UART Communication Protocol - Reverse Engineering Documentation
+# Kukirin G2 Pro UART Communication Protocol
+
+Reverse Engineering Documentation (V11)
 
 ## 1. Physical Interface
 
@@ -6,7 +8,7 @@
 - **Protocol**: UART (asynchronous)
 - **Baud Rate**: 9600 bps
 - **Data Format**: 8N1 (8 data bits, no parity, 1 stop bit)
-- **Voltage**: 3.3V TTL
+- **Voltage**: 5V TTL
 - **Connection**: Display (Master) ↔ Motor Controller (Slave)
 - **Channels**: 
   - D0: TX (Display → Controller)
