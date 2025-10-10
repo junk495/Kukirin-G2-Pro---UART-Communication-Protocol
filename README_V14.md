@@ -433,8 +433,8 @@ void loop() {
         }
     }
 }
-```cpp
-7.1 Expected Serial Monitor Output
+```
+### 7.1 Expected Serial Monitor Output
 ```
 ===============================================
 Kukirin G2 Pro Controller Emulator v1.1
@@ -455,50 +455,53 @@ TX #2: 02 0E 01 80 C0 00 00 00 0D AC 00 00 00 EC 02 0E  | Flag: 0x80 | Calc.Stat
 
 RX #3: 01 14 01 02 05 80 1E 00 5A 03 51 00 19 0C 01 A4 02 A8 25 XX  | Throttle: 680 | Rekup: 5 | Acc: 1 | Brake: ON
 TX #3: 02 0E 01 00 E0 00 00 00 08 AE 00 00 00 4C 02 0E  | Flag: 0x00 | Calc.Status: 0x4C
-...
-The display shows no error codes and displays speed data from UART, with battery voltage/temperature measured directly by its sensors.8. Changes from V13 to V148.1 Major Corrections
+```
+The display shows no error codes and displays speed data from UART, with battery voltage/temperature measured directly by its sensors.
+## 8. Changes from V13 to V14
+### 8.1 Major Corrections
 
-Byte 0x0A Encoding: Changed from incorrect 0x50 + Acceleration_Level to correct (Rekuperation_Level << 4) | Acceleration_Level
-Table 3.1 Removed: The incorrect Rekuperation Level table from V13 has been completely removed
-Bytes 0x08-0x09: Confirmed as constant 0x5A03 (858 decimal), NOT related to Recuperation
-8.2 New Additions
+- Byte 0x0A Encoding: Changed from incorrect 0x50 + Acceleration_Level to correct (Rekuperation_Level << 4) | Acceleration_Level
+- Table 3.1 Removed: The incorrect Rekuperation Level table from V13 has been completely removed
+- Bytes 0x08-0x09: Confirmed as constant 0x5A03 (858 decimal), NOT related to Recuperation
+### 8.2 New Additions
 
-Table 3.2: Complete 30-value matrix for all Recuperation + Acceleration combinations
-8 Physical Tests: Validated encoding with real hardware measurements:
+- Table 3.2: Complete 30-value matrix for all Recuperation + Acceleration combinations
+- 8 Physical Tests: Validated encoding with real hardware measurements:
 
-Acc 1-5 with Rekup 5 (5 tests)
-Acc 1 with Rekup 0 (1 test)
-Acc 1 with Rekup 3 (1 test)
-Acc 4 with Rekup 2 (1 test)
+  - Acc 1-5 with Rekup 5 (5 tests)
+  - Acc 1 with Rekup 0 (1 test)
+  - Acc 1 with Rekup 3 (1 test)
+  - Acc 4 with Rekup 2 (1 test)
 
 
-Arduino Code v1.1: Updated with proper decoding and enhanced debug output
-8.3 Documentation Improvements
+- Arduino Code v1.1: Updated with proper decoding and enhanced debug output
+### 8.3 Documentation Improvements
 
-Clear distinction between Recuperation and Acceleration
-Binary encoding examples for better understanding
-Formula and calculation examples added
-9. Future Work
+- Clear distinction between Recuperation and Acceleration
+- Binary encoding examples for better understanding
+- Formula and calculation examples added
+## 9. Future Work
 
-On-Road Validation: Test speed formula during actual riding; compare vs. GPS; validate across all Drive Modes and Speed Profiles.
-Light Activation Test: Dedicated test with light button; monitor Function Bitmask (0x05) for Bit 5 changes; confirm 0xA0 = Light ON.
-Indicator_L Deep Dive: Monitor 0x12 during turn signal/horn activation; identify triggers for 0x0D/0x15 values.
-Calculated Status Byte Investigation: Capture longer brake sequences; analyze pattern with System Status (0x04); test with different recuperation levels.
-Complete Recuperation + Acceleration Matrix: Test remaining 22 untested combinations for full validation.
-Unknown Fields: Analyze RX fields (0x05, 0x0A, 0x0D) and TX fields (0x06-0x07, 0x0B, 0x0E-0x0F, 0x13) via additional data or testing.
-Display Menu Options: Investigate effects of settings (mph vs. km/h) on the protocol.
-Error Handling: Document controller responses to invalid packets (e.g., incorrect checksums or lengths).
-Firmware Updates: Explore the firmware update protocol.
-Boot Sequence: Clarify full initialization process.
-10. Safety Warnings
+- On-Road Validation: Test speed formula during actual riding; compare vs. GPS; validate across all Drive Modes and Speed Profiles.
+- Light Activation Test: Dedicated test with light button; monitor Function Bitmask (0x05) for Bit 5 changes; confirm 0xA0 = Light ON.
+- Indicator_L Deep Dive: Monitor 0x12 during turn signal/horn activation; identify triggers for 0x0D/0x15 values.
+- Calculated Status Byte Investigation: Capture longer brake sequences; analyze pattern with System Status (0x04); test with different recuperation levels.
+- Complete Recuperation + Acceleration Matrix: Test remaining 22 untested combinations for full validation.
+- Unknown Fields: Analyze RX fields (0x05, 0x0A, 0x0D) and TX fields (0x06-0x07, 0x0B, 0x0E-0x0F, 0x13) via additional data or testing.
+- Display Menu Options: Investigate effects of settings (mph vs. km/h) on the protocol.
+- Error Handling: Document controller responses to invalid packets (e.g., incorrect checksums or lengths).
+- Firmware Updates: Explore the firmware update protocol.
+- Boot Sequence: Clarify full initialization process.
+## 10. Safety Warnings
 ⚠️ WARNING: Modifications to the e-scooter can:
 
-Invalidate road registration.
-Void warranty.
-Lead to accidents.
-Have legal consequences.
-This documentation is for educational purposes only.11. Contributing
-Contributions are welcome to improve this documentation. Submit pull requests with test data, results, or clarifications. Share packet captures or logs from physical tests with a Kukirin G2 Pro scooter.12. License
+- Invalidate road registration.
+- Void warranty.
+- Lead to accidents.
+- Have legal consequences.
+This documentation is for educational purposes only.
+## 11. Contributing
+Contributions are welcome to improve this documentation. Submit pull requests with test data, results, or clarifications. Share packet captures or logs from physical tests with a Kukirin G2 Pro scooter.
+## 12. License
 This documentation is licensed under the MIT License. See the LICENSE file for details.13. Acknowledgments
 
-Special thanks to the reverse engineering community and all contributors who helped validate this protocol through physical testing.
