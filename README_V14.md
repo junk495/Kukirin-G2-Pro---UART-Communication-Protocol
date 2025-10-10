@@ -433,7 +433,9 @@ void loop() {
         }
     }
 }
+```cpp
 7.1 Expected Serial Monitor Output
+```
 ===============================================
 Kukirin G2 Pro Controller Emulator v1.1
 ===============================================
@@ -498,4 +500,5 @@ Have legal consequences.
 This documentation is for educational purposes only.11. Contributing
 Contributions are welcome to improve this documentation. Submit pull requests with test data, results, or clarifications. Share packet captures or logs from physical tests with a Kukirin G2 Pro scooter.12. License
 This documentation is licensed under the MIT License. See the LICENSE file for details.13. Acknowledgments
+
 Special thanks to the reverse engineering community and all contributors who helped validate this protocol through physical testing.
