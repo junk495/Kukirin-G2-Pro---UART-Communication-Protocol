@@ -1,5 +1,5 @@
 # Kukirin G2 Pro UART Communication Protocol
-Reverse Engineering Documentation (Konsolidierte Version basierend auf V8–V11)
+Reverse Engineering Documentation (V12)
 
 ## Introduction
 This repository documents the reverse-engineered UART communication protocol between the display TFM13-FEIMI-16 (master) and the motor controller FM-G2-PRO-XS (slave) of the Kukirin G2 Pro e-scooter. All information was gathered by analyzing the data stream and validated through extensive testing.
