@@ -1,10 +1,11 @@
 # Kukirin G2 Pro UART Communication Protocol
-## Reverse Engineering Documentation (V16 - Final & Complete)
+## Reverse Engineering Documentation (V16)
 
 ### Introduction
-This document details the reverse-engineered UART communication protocol for the Kukirin G2 Pro e-scooter, specifically between the display (master) and the motor controller (slave). Information was gathered through data stream analysis and validated with a custom ESP32-based controller emulator.
+This repository documents the reverse-engineered UART communication protocol between the display TFM13-FEIMI-16 (master) and the motor controller FM-G2-PRO-XS (slave) of the Kukirin G2 Pro e-scooter. All information was gathered by analyzing the data stream and validated through extensive testing, including physical hardware validation with the original motor controller.
 This documentation is intended for educational purposes and for developers interested in understanding or customizing the scooter's behavior.
-Validation Status: The protocol is 100% functionally understood and validated. All features, including the dynamic speed checksum, have been successfully implemented, eliminating all communication errors (like E-006).
+Validation Status: The protocol has been successfully validated using an ESP32-D1 emulating the motor controller and physical tests with the original hardware (wheel lifted, controlled inputs, menu parameter changes). All critical features have been confirmed.
+
 Completion Status:
 
 TX Packets: 20/20 Bytes (100%) fully understood and validated  
