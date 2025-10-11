@@ -27,8 +27,8 @@ Connection: Display (Master) ↔ Motor Controller (Slave)
 Red = Bat+  
 Blue = Bat+ switched  
 Black = GND  
-Green = RX (Display → Controller, D0)  
-Yellow = TX (Controller → Display, D1)
+Yellow = TX (Display → Controller, D0)  
+Green = RX (Controller → Display, D1)
 
 ### Hardware Specifications
 
