@@ -370,6 +370,8 @@ uint8_t acceleration = rekup_acc & 0x0F;
 ## 10. ESP32 D1 Mini Implementation Example
 The following code is a complete, robust implementation for an ESP32 D1 Mini that emulates the motor controller and communicates successfully with the display, including a fully functional speed display.
 
+Please see also the [Arduino platform library](https://github.com/junk495/KukirinG2Pro-ESP32-Bridge).
+
 ### 10.1 Hardware Note: ESP32 D1 Mini (Wemos)
 A key advantage of using an ESP32-based board is its 5V-tolerant inputs. This allows for a direct connection to the 5V logic of the display's TX line without the need for a logic level shifter, simplifying the hardware setup significantly.
 
